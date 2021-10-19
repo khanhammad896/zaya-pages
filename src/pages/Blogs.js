@@ -7,11 +7,16 @@ import Heading from "../assets/Heading.PNG";
 import { AiOutlineSearch } from "react-icons/ai";
 import img0 from "../assets/blog_image0.PNG";
 const Blogs = ({ fontSizes }) => {
-  const { font70px, font23px, font25px } = fontSizes;
+  const { font70px, font23px, font25px, font28px } = fontSizes;
   const [tabIndex, setTabIndex] = React.useState(0);
   return (
     <>
-      <BlogsWrapper font70px={font70px} font23px={font23px} font25px={font25px}>
+      <BlogsWrapper
+        font70px={font70px}
+        font23px={font23px}
+        font25px={font25px}
+        font28px={font28px}
+      >
         <Banner fontSizes={fontSizes} />
         <Navbar fontSizes={fontSizes} />
         <Grid container style={{ justifyContent: "center" }}>
@@ -55,7 +60,7 @@ const Blogs = ({ fontSizes }) => {
             </div>
           </Grid>
         </Grid>
-        <Grid container justifyContent="center" style={{ paddingInline: 300 }}>
+        <Grid container justifyContent="center" style={{ paddingInline: 200 }}>
           <Grid container className="full-cards">
             <Grid item lg={4} md={5} sm={7} xs={12}>
               <div className="img0-wrapper">
@@ -64,15 +69,29 @@ const Blogs = ({ fontSizes }) => {
             </Grid>
             <Grid
               item
-              style={{ flexGrow: 1, paddingInlineStart: 130, paddingBlock: 50 }}
+              lg={8}
+              md={7}
+              sm={5}
+              xs={12}
+              style={{ padding: "50px 50px 50px 100px" }}
             >
               <Grid container direction="column">
                 <div className="blog-info">
                   <span>11.21.21 </span>
                   <span style={{ marginLeft: 30 }}>3 MIN READ</span>
                 </div>
-                <div className="blog-text">
+                <div className="blog-title">
                   <span>This is the title of the post with max 2 lines.</span>
+                </div>
+                <div className="blog-body">
+                  <span>
+                    We connect you to the right care and expertise through our
+                    wide-ranging network of maternal health specialists. This is
+                    the max length.
+                  </span>
+                </div>
+                <div className="blog-author">
+                  <span>BY SARA SEIGEL</span>
                 </div>
               </Grid>
             </Grid>
@@ -152,7 +171,6 @@ const BlogsWrapper = styled.section`
   .img0-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 36px 0px 0px 36px;
   }
   .blog-info {
@@ -164,12 +182,37 @@ const BlogsWrapper = styled.section`
     letter-spacing: 2.3px;
     font-family: AvenirHeavy;
   }
-  .blog-text {
-    margin-block: 60px;
+  .blog-title {
+    margin: 40px 0 20px 0;
+    max-width: max-content;
   }
-  .blog-text span {
+  .blog-title span {
     color: #20292a;
     font-size: ${(props) => props.font70px};
     font-family: BigCaslonMedium;
+  }
+  .blog-body {
+    max-width: 100%;
+  }
+  .blog-body span {
+    font-size: ${(props) => props.font28px};
+    font-family: AvenirBook;
+    color: #7b7269;
+    line-height: 2;
+  }
+
+  .blog-author {
+    margin-top: 30px;
+  }
+  .blog-author span {
+    color: #20292a;
+    font-size: ${(props) => props.font23px};
+    font-family: AvenirHeavy;
+  }
+
+  @media screen and (max-width: 768px) {
+    img0-wrapper img {
+      border-radius: 36px 36px 0 0;
+    }
   }
 `;
