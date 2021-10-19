@@ -1,0 +1,42 @@
+{
+  "fontSizes": {
+    "font110px": "calc(5vw + 3px)",
+    "font100px": "calc(4vw + 10px)",
+    "font70px": "calc(3vw + 5px)",
+    "font60px": "calc(2.8vw)",
+
+    "font55px": "37px",
+    "font45px": "29px",
+    "font34px": "23px",
+    "font30px": "20px",
+    "font25px": "17px",
+    "font23px": "16px",
+    "font20px": "13px",
+    "font18px": "12px"
+  },
+
+  "mobileFontSizes": {
+    "font110px": "calc(45px)",
+    "font100px": "calc(4vw + 10px)",
+    "font55px": "37px",
+
+    "font70px": "calc(40px)",
+    "font60px": "27px",
+    "font45px": "22.5px",
+    "font34px": "18px",
+
+    "font30px": "20px",
+    "font25px": "17px",
+    "font23px": "16px",
+    "font20px": "13px",
+    "font18px": "12px"
+  },
+  "colors": {
+    "primary": "",
+    "secondary": "",
+    "tertiary": "",
+    "default": "",
+    "alert": "",
+    "warning": ""
+  }
+}
