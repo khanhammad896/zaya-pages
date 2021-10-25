@@ -6,9 +6,55 @@ import { Grid, Box, Input } from "@mui/material";
 import Heading from "../assets/Heading.PNG";
 import { AiOutlineSearch } from "react-icons/ai";
 import img0 from "../assets/blog_image0.PNG";
-const Blogs = ({ fontSizes }) => {
+import BlogCard from "../components/BlogCard";
+const Blogs = ({ fontSizes, isMobileView }) => {
   const { font70px, font23px, font25px, font28px } = fontSizes;
   const [tabIndex, setTabIndex] = React.useState(0);
+  const blogDetails = [
+    {
+      id: 0,
+      date: "11.11.21",
+      read_time: "3 MIN READ",
+      title: "This is the title of the post with max 2 lines.",
+      author: "By Sara Seigel",
+    },
+    {
+      id: 1,
+      date: "11.11.21",
+      read_time: "3 MIN READ",
+      title: "This is the title of the post with max 2 lines.",
+      author: "By Sara Seigel",
+    },
+    {
+      id: 2,
+      date: "11.11.21",
+      read_time: "3 MIN READ",
+      title: "This is the title of the post with max 2 lines.",
+      author: "By Sara Seigel",
+    },
+    {
+      id: 3,
+      date: "11.11.21",
+      read_time: "3 MIN READ",
+      title: "This is the title of the post with max 2 lines.",
+      author: "By Sara Seigel",
+    },
+    {
+      id: 4,
+      date: "11.11.21",
+      read_time: "3 MIN READ",
+      title: "This is the title of the post with max 2 lines.",
+      author: "By Sara Seigel",
+    },
+    {
+      id: 5,
+      date: "11.11.21",
+      read_time: "3 MIN READ",
+      title: "This is the title of the post with max 2 lines.",
+      author: "By Sara Seigel",
+    },
+  ];
+  console.log("Is Mobile view >> ", isMobileView);
   return (
     <>
       <BlogsWrapper
@@ -60,44 +106,56 @@ const Blogs = ({ fontSizes }) => {
             </div>
           </Grid>
         </Grid>
-        <Grid container justifyContent="center" style={{ paddingInline: 200 }}>
-          <Grid container className="full-cards">
-            <Grid item lg={4} md={5} sm={7} xs={12}>
-              <div className="img0-wrapper">
-                <img src={img0} alt="women" />
-              </div>
-            </Grid>
-            <Grid
-              item
-              lg={8}
-              md={7}
-              sm={5}
-              xs={12}
-              style={{ padding: "50px 50px 50px 100px" }}
-            >
-              <Grid container direction="column">
-                <div className="blog-info">
-                  <span>11.21.21 </span>
-                  <span style={{ marginLeft: 30 }}>3 MIN READ</span>
+        <Grid container justifyContent="center">
+          <Grid item lg={8} md={9} sm={10} xs={11}>
+            <Grid container className="full-cards">
+              <Grid item lg={4} md={5} sm={12} xs={12}>
+                <div className="img0-wrapper">
+                  <img src={img0} alt="women" />
                 </div>
-                <div className="blog-title">
-                  <span>This is the title of the post with max 2 lines.</span>
-                </div>
-                <div className="blog-body">
-                  <span>
-                    We connect you to the right care and expertise through our
-                    wide-ranging network of maternal health specialists. This is
-                    the max length.
-                  </span>
-                </div>
-                <div className="blog-author">
-                  <span>BY SARA SEIGEL</span>
-                </div>
+              </Grid>
+              <Grid
+                item
+                lg={8}
+                md={7}
+                sm={12}
+                xs={12}
+                style={{ padding: "50px 50px 50px 10%" }}
+              >
+                <Grid container direction="column">
+                  <div className="blog-info">
+                    <span>11.21.21 </span>
+                    <span style={{ marginLeft: 30 }}>3 MIN READ</span>
+                  </div>
+                  <div className="blog-title">
+                    <span>This is the title of the post with max 2 lines.</span>
+                  </div>
+                  {!isMobileView && (
+                    <div className="blog-body">
+                      <span>
+                        We connect you to the right care and expertise through
+                        our wide-ranging network of maternal health specialists.
+                        This is the max length.
+                      </span>
+                    </div>
+                  )}
+                  <div className="blog-author">
+                    <span>BY SARA SEIGEL</span>
+                  </div>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-        <Grid container style={{ marginBlock: 50 }}></Grid>
+        <Grid container style={{ marginBlock: 50 }} justifyContent="center">
+          <Grid item lg={8} md={9} sm={10} xs={11}>
+            <Grid container>
+              {blogDetails.map((blog) => (
+                <BlogCard key={blog.id} id={blog.id} />
+              ))}
+            </Grid>
+          </Grid>
+        </Grid>
       </BlogsWrapper>
     </>
   );
@@ -210,9 +268,9 @@ const BlogsWrapper = styled.section`
     font-family: AvenirHeavy;
   }
 
-  @media screen and (max-width: 768px) {
-    img0-wrapper img {
-      border-radius: 36px 36px 0 0;
+  @media screen and (max-width: 899px) {
+    .img0-wrapper img {
+      border-radius: 36px;
     }
   }
 `;

@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "BigCaslonMedium";
   src: url(".\\styles\\fonts\\Big Caslon Medium\\Big Caslon Medium.ttf");
 }
@@ -11,6 +11,36 @@
 @font-face {
   font-family: "AvenirBook";
   src: url(".\\styles\\fonts\\AvenirFont\\AvenirLTStdBook.ttf");
+}
+
+@font-face {
+  font-family: "AvenirBlack";
+  src: url("./styles/fonts/AvenirFont/AvenirLTStd-Black.ttf");
+}
+
+@font-face {
+  font-family: "AvenirRoman";
+  src: url("./styles/fonts/AvenirFont/AvenirLTStd-Roman.ttf");
+}
+
+@font-face {
+  font-family: "AvenirHeavy";
+  src: url("./styles/fonts/AvenirFont/AvenirHeavy.ttf");
+} */
+
+@font-face {
+  font-family: "BigCaslonMeddium";
+  src: url("./styles/fonts/Big Caslon Medium/Big Caslon Medium.ttf");
+}
+
+@font-face {
+  font-family: "AvenirMedium";
+  src: url("./styles/fonts/Avenir Medium/Avenir Medium.ttf");
+}
+
+@font-face {
+  font-family: "AvenirBook";
+  src: url("./styles/fonts/AvenirFont/AvenirLTStdBook.ttf");
 }
 
 @font-face {

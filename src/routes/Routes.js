@@ -26,7 +26,7 @@ const Routes = () => {
 
   return (
     <>
-      <Blogs fontSizes={currentFontSizes} />
+      <Blogs fontSizes={currentFontSizes} isMobileView={isMobileView} />
     </>
   );
 };
